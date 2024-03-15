@@ -29,10 +29,11 @@ def generate_response(csv_file, input_query):
 # Input widgets
 uploaded_file = st.file_uploader('Upload a CSV file', type=['csv'])
 question_list = [
-  'How many rows are there?',
-  'What is the range of values for MolWt with logS greater than 0?',
-  'How many rows have MolLogP value greater than 0.',
-  'Other']
+  '갤럭시 제품에 대한 질문하기',
+  'S23 Ultra 자급제 제품 가격 알려줘?',
+  '60대 남성,여성들이 많이 사용하는 스마트폰 제품 추천해줘?',
+  '40대 남성들이 많이 사용하는 스마트폰 제품 알려줘.'
+]
 query_text = st.selectbox('Select an example query:', question_list, disabled=not uploaded_file)
 openai_api_key = st.text_input('OpenAI API Key', type='password', disabled=not (uploaded_file and query_text))
 
